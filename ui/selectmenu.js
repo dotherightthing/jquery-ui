@@ -57,6 +57,7 @@ return $.widget( "ui.selectmenu", {
 			button: selectmenuId + "-button",
 			menu: selectmenuId + "-menu"
 		};
+		this.items = [];
 
 		this._drawButton();
 		this._drawMenu();
@@ -302,6 +303,7 @@ return $.widget( "ui.selectmenu", {
 
 	_renderItem: function( ul, item ) {
 		var li = $( "<li>", {
+			accesskey: item.accesskey,
 			title: item.element.attr( "title" )
 		});
 
@@ -562,9 +564,11 @@ return $.widget( "ui.selectmenu", {
 				index: index,
 				value: option.attr( "value" ),
 				label: option.text(),
+				accesskey: option.attr( "accesskey" ),
 				optgroup: optgroup.attr( "label" ) || "",
 				disabled: optgroup.prop( "disabled" ) || option.prop( "disabled" )
 			});
+			option.removeAttr( "accesskey" );
 		});
 		this.items = data;
 	},
@@ -578,6 +582,11 @@ return $.widget( "ui.selectmenu", {
 		if ( this.accesskey ) {
 			this.element.attr( "accesskey", this.accesskey );
 		}
+		$.each( this.items, function() {
+			if ( this.accesskey ) {
+				this.element.attr( "accesskey", this.accesskey );
+			}
+		});
 	}
 });
 

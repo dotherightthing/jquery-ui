@@ -11,7 +11,10 @@ asyncTest( "accessibility", function() {
 			});
 
 	element.find( "option" ).each(function( index ) {
-		$( this ).attr( "title", "A demo title #" + index  );
+		$( this ).attr({
+			accesskey: index,
+			title: "A demo title #" + index
+		});
 	});
 
 	element.selectmenu();
@@ -21,7 +24,7 @@ asyncTest( "accessibility", function() {
 	button.simulate( "focus" );
 	links = menu.find( "li.ui-menu-item" );
 
-	expect( 15 + links.length * 3 );
+	expect( 15 + links.length * 4 );
 
 	setTimeout(function() {
 		equal( button.attr( "role" ), "combobox", "button role" );
@@ -52,6 +55,7 @@ asyncTest( "accessibility", function() {
 			var link = $( this );
 			equal( link.attr( "role" ), "option", "menu link #" + index +" role" );
 			equal( link.attr( "tabindex" ), -1, "menu link #" + index +" tabindex" );
+			equal( link.attr( "accesskey" ), index, "menu link #" + index + " accesskey" );
 			equal( link.attr( "title" ), "A demo title #" + index, "menu link #" + index + " title" );
 		});
 		start();
