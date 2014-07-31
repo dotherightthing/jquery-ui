@@ -6,8 +6,10 @@ test( "destroy", function() {
 	expect( 3 );
 
 	var element = $( "#speed" )
-		.attr( "accesskey", "s" )
-		.attr( "title", "A demo title." )
+		.attr({
+			accesskey: "s",
+			title: "A demo title."
+		})
 		.selectmenu()
 		.selectmenu( "destroy" );
 

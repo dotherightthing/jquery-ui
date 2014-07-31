@@ -5,10 +5,12 @@ module( "selectmenu: core" );
 asyncTest( "accessibility", function() {
 	var links, button, menu,
 		element = $( "#speed" )
-			.attr( "accesskey", "s" )
-			.attr( "title", "A demo title" );
+			.attr({
+				accesskey: "s",
+				title: "A demo title"
+			});
 
-	element.find( "option" ).each( function( index ) {
+	element.find( "option" ).each(function( index ) {
 		$( this ).attr( "title", "A demo title #" + index  );
 	});
 
@@ -50,7 +52,7 @@ asyncTest( "accessibility", function() {
 			var link = $( this );
 			equal( link.attr( "role" ), "option", "menu link #" + index +" role" );
 			equal( link.attr( "tabindex" ), -1, "menu link #" + index +" tabindex" );
-			equal( link.attr( "title" ), "A demo title #" + index, "menu link #" + index +" title" );
+			equal( link.attr( "title" ), "A demo title #" + index, "menu link #" + index + " title" );
 		});
 		start();
 	});
