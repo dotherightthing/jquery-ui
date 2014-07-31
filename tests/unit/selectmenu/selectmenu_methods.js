@@ -17,7 +17,6 @@ test( "destroy", function() {
 	domEqual( "#speed", function() {
 		$( "#speed" ).selectmenu().selectmenu( "destroy" );
 	});
-
 });
 
 test( "open / close", function() {

@@ -301,7 +301,9 @@ return $.widget( "ui.selectmenu", {
 	},
 
 	_renderItem: function( ul, item ) {
-		var li = $( "<li>" );
+		var li = $( "<li>", {
+			title: item.element.attr( "title" )
+		});
 
 		if ( item.disabled ) {
 			li.addClass( "ui-state-disabled" );
