@@ -13,6 +13,7 @@ test( "destroy", function() {
 		.selectmenu()
 		.selectmenu( "destroy" );
 
+	// Check if accesskey is restored after removing it to avoid duplicate
 	equal( element.attr( "accesskey" ), "s", "element accesskey" );
 	equal( element.attr( "title" ), "A demo title.", "element title" );
 
