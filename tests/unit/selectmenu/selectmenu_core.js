@@ -4,14 +4,17 @@ module( "selectmenu: core" );
 
 asyncTest( "accessibility", function() {
 	var links,
-		element = $( "#speed" ).selectmenu(),
+		element = $( "#speed" )
+			.attr( "accesskey", "s" )
+			.attr( "title", "A demo title." )
+			.selectmenu(),
 		button = element.selectmenu( "widget" ),
 		menu = element.selectmenu( "menuWidget" );
 
 	button.simulate( "focus" );
 	links = menu.find( "li.ui-menu-item" );
 
-	expect( 12 + links.length * 2 );
+	expect( 15 + links.length * 2 );
 
 	setTimeout(function() {
 		equal( button.attr( "role" ), "combobox", "button role" );
@@ -25,6 +28,9 @@ asyncTest( "accessibility", function() {
 			"button link aria-labelledby"
 		);
 		equal( button.attr( "tabindex" ), 0, "button link tabindex" );
+		ok( !element.attr( "accesskey" ), "element accesskey" );
+		equal( button.attr( "accesskey" ), "s", "button accesskey" );
+		equal( button.attr( "title" ), "A demo title.", "button title" );
 
 		equal( menu.attr( "role" ), "listbox", "menu role" );
 		equal( menu.attr( "aria-labelledby" ), button.attr( "id" ), "menu aria-labelledby" );

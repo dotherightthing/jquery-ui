@@ -91,7 +91,8 @@ return $.widget( "ui.selectmenu", {
 			"aria-expanded": "false",
 			"aria-autocomplete": "list",
 			"aria-owns": this.ids.menu,
-			"aria-haspopup": "true"
+			"aria-haspopup": "true",
+			title: this.element.attr( "title" )
 		})
 			.insertAfter( this.element );
 
@@ -107,6 +108,12 @@ return $.widget( "ui.selectmenu", {
 
 		this._setText( this.buttonText, this.element.find( "option:selected" ).text() );
 		this._resizeButton();
+
+		this.accesskey = this.element.attr( "accesskey" );
+		if ( this.accesskey ) {
+			this.button.attr( "accesskey", this.accesskey );
+			this.element.removeAttr( "accesskey" );
+		}
 
 		this._on( this.button, this._buttonEvents );
 		this.button.one( "focusin", function() {
@@ -566,6 +573,9 @@ return $.widget( "ui.selectmenu", {
 		this.element.show();
 		this.element.removeUniqueId();
 		this.label.attr( "for", this.ids.element );
+		if ( this.accesskey ) {
+			this.element.attr( "accesskey", this.accesskey );
+		}
 	}
 });
 

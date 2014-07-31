@@ -3,10 +3,21 @@
 module( "selectmenu: methods" );
 
 test( "destroy", function() {
-	expect( 1 );
+	expect( 3 );
+
+	var element = $( "#speed" )
+		.attr( "accesskey", "s" )
+		.attr( "title", "A demo title." )
+		.selectmenu()
+		.selectmenu( "destroy" );
+
+	equal( element.attr( "accesskey" ), "s", "element accesskey" );
+	equal( element.attr( "title" ), "A demo title.", "element title" );
+
 	domEqual( "#speed", function() {
 		$( "#speed" ).selectmenu().selectmenu( "destroy" );
 	});
+
 });
 
 test( "open / close", function() {
