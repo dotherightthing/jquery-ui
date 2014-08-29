@@ -110,12 +110,6 @@ return $.widget( "ui.selectmenu", {
 		this._setText( this.buttonText, this.element.find( "option:selected" ).text() );
 		this._resizeButton();
 
-		this.accesskey = this.element.attr( "accesskey" );
-		if ( this.accesskey ) {
-			this.button.attr( "accesskey", this.accesskey );
-			this.element.removeAttr( "accesskey" );
-		}
-
 		this._on( this.button, this._buttonEvents );
 		this.button.one( "focusin", function() {
 
@@ -303,7 +297,6 @@ return $.widget( "ui.selectmenu", {
 
 	_renderItem: function( ul, item ) {
 		var li = $( "<li>", {
-			accesskey: item.accesskey,
 			title: item.element.attr( "title" )
 		});
 
@@ -564,11 +557,9 @@ return $.widget( "ui.selectmenu", {
 				index: index,
 				value: option.attr( "value" ),
 				label: option.text(),
-				accesskey: option.attr( "accesskey" ),
 				optgroup: optgroup.attr( "label" ) || "",
 				disabled: optgroup.prop( "disabled" ) || option.prop( "disabled" )
 			});
-			option.removeAttr( "accesskey" );
 		});
 		this.items = data;
 	},
@@ -579,14 +570,6 @@ return $.widget( "ui.selectmenu", {
 		this.element.show();
 		this.element.removeUniqueId();
 		this.label.attr( "for", this.ids.element );
-		if ( this.accesskey ) {
-			this.element.attr( "accesskey", this.accesskey );
-		}
-		$.each( this.items, function() {
-			if ( this.accesskey ) {
-				this.element.attr( "accesskey", this.accesskey );
-			}
-		});
 	}
 });
 
