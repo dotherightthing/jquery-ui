@@ -3,23 +3,15 @@
 module( "selectmenu: methods" );
 
 test( "destroy", function() {
-	expect( 4 );
+	expect( 2 );
 
-	var element = $( "#speed" )
-			.attr({
-				accesskey: "s",
-				title: "A demo title."
-			}),
-		option = element.find( "option:first" )
-			.attr( "accesskey", "o" );
+	var element = $( "#speed" ).attr( "title", "A demo title." );
 
 	element
 		.selectmenu()
 		.selectmenu( "destroy" );
 
-	// Check if accesskey is restored after removing it to avoid duplicate
-	equal( option.attr( "accesskey" ), "o", "option accesskey" );
-	equal( element.attr( "accesskey" ), "s", "element accesskey" );
+	// Check if attribute is restored after removing it to avoid duplicate
 	equal( element.attr( "title" ), "A demo title.", "element title" );
 
 	domEqual( "#speed", function() {
