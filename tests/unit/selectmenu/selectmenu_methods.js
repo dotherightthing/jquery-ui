@@ -3,16 +3,7 @@
 module( "selectmenu: methods" );
 
 test( "destroy", function() {
-	expect( 2 );
-
-	var element = $( "#speed" ).attr( "title", "A demo title." );
-
-	element
-		.selectmenu()
-		.selectmenu( "destroy" );
-
-	// Check if attribute is restored after removing it to avoid duplicate
-	equal( element.attr( "title" ), "A demo title.", "element title" );
+	expect( 1 );
 
 	domEqual( "#speed", function() {
 		$( "#speed" ).selectmenu().selectmenu( "destroy" );
