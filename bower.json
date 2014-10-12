@@ -1,0 +1,39 @@
+{
+  "name": "jquery-ui-selectmenu",
+  "description": "A fork of jQuery UI: legacy Selectmenu Widget by http://www.felixnagel.com",
+  "main": [
+    "ui/jquery.ui.core.js",
+    "ui/jquery.ui.position.js",
+    "ui/jquery.ui.selectmenu.js",
+    "ui/jquery.ui.widget.js"
+  ],
+  "license": "https://github.com/fnagel/jquery-ui/blob/selectmenu/MIT-LICENSE.txt",
+  "ignore": [
+    "**/.*",
+    "demos",
+    "external",
+    "tests",
+    "MIT-LICENSE.txt"
+  ],
+  "keywords": [
+    "accessible",
+    "felixnagel",
+    "filamentgroup",
+    "jquery-ui",
+    "selectmenu"
+  ],
+  "authors": [
+    { "name": "Felix Nagel", "email": "info@felixnagel.com" }
+  ],
+  "homepage": "https://github.com/fnagel/jquery-ui",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/fnagel/jquery-ui.git"
+  },
+  "dependencies": {
+    "jquery": "1.8.3"
+  },
+  "devDependencies": {},
+  "resolutions": {},
+  "private": true
+}
