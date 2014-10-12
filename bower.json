@@ -10,7 +10,9 @@
     "demos",
     "external",
     "tests",
-    "MIT-LICENSE.txt"
+    "AUTHORS.txt",
+    "MIT-LICENSE.txt",
+    "jquery-1.8.3.js"
   ],
   "keywords": [
     "accessible",
