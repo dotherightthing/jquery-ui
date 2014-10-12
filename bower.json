@@ -1,5 +1,5 @@
 {
-  "name": "jquery-ui-selectmenu",
+  "name": "jquery-ui",
   "description": "A fork of jQuery UI: legacy Selectmenu Widget by http://www.felixnagel.com",
   "main": [
     "ui/jquery.ui.selectmenu.js"
@@ -22,7 +22,7 @@
     "selectmenu"
   ],
   "authors": [
-    { "name": "Felix Nagel", "email": "info@felixnagel.com" }
+    "Felix Nagel <info@felixnagel.com>"
   ],
   "homepage": "https://github.com/fnagel/jquery-ui",
   "repository": {
