@@ -2,10 +2,7 @@
   "name": "jquery-ui-selectmenu",
   "description": "A fork of jQuery UI: legacy Selectmenu Widget by http://www.felixnagel.com",
   "main": [
-    "ui/jquery.ui.core.js",
-    "ui/jquery.ui.position.js",
-    "ui/jquery.ui.selectmenu.js",
-    "ui/jquery.ui.widget.js"
+    "ui/jquery.ui.selectmenu.js"
   ],
   "license": "https://github.com/fnagel/jquery-ui/blob/selectmenu/MIT-LICENSE.txt",
   "ignore": [
